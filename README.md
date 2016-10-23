@@ -2,6 +2,8 @@
 
 > Like [Preact]'s [Linked State], but for [refs].
 
+<img src="http://i.imgur.com/V4kTgbn.png" width="447">
+
 This gives you **the ease of String Refs** _(unavailable in Preact core, deprecated in React)_, **using Function Refs**.
 
 Calling `linkRef('name')` creates an optimized ref handler function that populates `this.refs.name` on your component for you.
