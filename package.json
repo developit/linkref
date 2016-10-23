@@ -1,7 +1,7 @@
 {
   "name": "linkref",
   "amdName": "linkRef",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Like Linked State, but for Refs.",
   "main": "dist/linkref.js",
   "jsnext:main": "src/index.js",
