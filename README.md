@@ -6,9 +6,16 @@
 
 This gives you **the ease of String Refs** _(unavailable in Preact core, deprecated in React)_, **using Function Refs**.
 
-Calling `linkRef('name')` creates an optimized ref handler function that populates `this.refs.name` on your component for you.
+Calling `linkRef('name')` creates an optimized ref handler function that populates `this.refs.name` on your component for you. The trick is that `linkRef()` is **memoized** - this means you can call it as many times as you want (inline, in render!) and it won't create any new closures. 🌈
 
-The trick is that `linkRef()` is **memoized** - this means you can call it as many times as you want (inline, in render!) and it won't create any new closures. 🌈
+> **Note:** You can accomplish this with function refs just fine! It's important to understand how function refs work, since `linkRef()` is just generating a function ref on your behalf. Here is an unoptimized implementation of `linkRef()` - be sure to understand how it works:
+>
+> ```js
+> function linkRef(component, name) {
+>   if (!component.refs) component.refs = {};
+>   return (ref) => component.refs[name] = ref;
+> }
+> ```
 
 
 ---
