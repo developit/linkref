@@ -1,5 +1,7 @@
 # `linkref` [![NPM](https://img.shields.io/npm/v/linkref.svg?style=flat)](https://www.npmjs.org/package/linkref) [![travis-ci](https://travis-ci.org/developit/linkref.svg?branch=master)](https://travis-ci.org/developit/linkref)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/developit/linkref.svg)](https://greenkeeper.io/)
+
 > Like [Preact]'s [Linked State], but for [refs].
 
 <img src="http://i.imgur.com/V4kTgbn.png" width="447">
