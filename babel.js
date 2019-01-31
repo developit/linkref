@@ -12,7 +12,7 @@ module.exports = function linkRefBabelPlugin(babel, options) {
 	}
 
 	return {
-		name: "string-refs-to-linkref",
+		name: "linkref/babel",
 		visitor: {
 			Program: {
 				exit(path, state) {
