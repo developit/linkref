@@ -36,17 +36,17 @@ npm install --save linkref
 import linkRef from 'linkref';
 
 class Foo extends Component {
-	componentDidMount() {
-		// log the <div /> to the console:
-		console.log(this.refs.foo);
-	}
-	render() {
-		return (
-			<div ref={linkRef(this, 'foo')}>
-				some text
-			</div>
-		);
-	}
+    componentDidMount() {
+        // log the <div /> to the console:
+        console.log(this.refs.foo);
+    }
+    render() {
+        return (
+            <div ref={linkRef(this, 'foo')}>
+                some text
+            </div>
+        );
+    }
 }
 ```
 
@@ -59,20 +59,63 @@ class Foo extends Component {
 import 'linkref/polyfill';
 
 class Foo extends Component {
-	componentDidMount() {
-		// log the <div /> to the console:
-		console.log(this.refs.foo);
-	}
-	render() {
-		return (
-			<div ref={this.linkRef('foo')}>
-				some text
-			</div>
-		);
-	}
+    componentDidMount() {
+        // log the <div /> to the console:
+        console.log(this.refs.foo);
+    }
+    render() {
+        return (
+            <div ref={this.linkRef('foo')}>
+                some text
+            </div>
+        );
+    }
 }
 ```
 
+
+### Babel Plugin
+
+There's also a Babel plugin available as `linkref/babel`:
+
+```js
+// .babelrc
+{
+  "plugins": [
+    "linkref/babel",
+
+    // all options are optional - here are the defaults:
+    ["linkref/babel", {
+      "module": "linkref",
+      "importName": "_createStringRef"
+    }]
+  ]
+}
+```
+
+It's also useful as a one-off codemod for upgrading from string refs to linkref:
+
+```sh
+npm i --save linkref
+
+# run babel on all files in ./src, changing them in-place:
+npx babel --no-babelrc --plugins=linkref/babel src -d src
+```
+
+<details>
+<summary>Don't have <code>npx</code>?</summary>
+
+Update to the latest `npm` version to get it, or do this instead:
+
+```sh
+# get babel cli:
+npm i @babel/core @babel/cli
+# you'll be using linkref as a library now:
+npm i --save linkref
+# run babel on all files in ./src, changing them in-place:
+./node_modules/.bin/babel --no-babelrc --plugins=linkref/babel src -d src
+```
+</details>
 
 ---
 

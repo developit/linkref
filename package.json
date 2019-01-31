@@ -27,7 +27,8 @@
   "files": [
     "src",
     "dist",
-    "polyfill.js"
+    "polyfill.js",
+    "babel.js"
   ],
   "author": "Jason Miller <jason@developit.ca>",
   "license": "MIT",
